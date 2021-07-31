@@ -5,7 +5,7 @@ unsigned long long process(unsigned long long i, int steps = 0)
 {
 	unsigned long long n = i;
 	int s = steps;
-	if (n == 1)
+	if (n == 1 || n == 0)
 		return s;
 	if (n % 2 == 0)
 		n = n/2;
