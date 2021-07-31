@@ -2,20 +2,23 @@
 #include "InfInt.h"
 using namespace std;
 
-InfInt process(InfInt i, InfInt steps = 0)
+pair<InfInt, InfInt> process(InfInt i, InfInt steps = 0, InfInt max = 0)
 {
 	InfInt n = i;
 	InfInt s = steps;
+	InfInt m = max;
 	if (n == 1 || n == 0)
-		return s;
+		return make_pair(s, m);
 	if (n % 2 == 0)
 		n = n/2;
 	else
 		n = n * 3 + 1;
+	if (n > m)
+		m = n;
 	cout << i << " » ";
 	s++;
-	s = process(n, s);
-	return s;
+	pair<InfInt, InfInt> p = process(n, s, m);
+	return make_pair(p.first, p.second);
 }
 
 int main()
@@ -25,7 +28,8 @@ int main()
 	cout << "Collatz Conjecture Calculator" << endl;
 	cout << "Input an integer >";
 	cin >> input;
-	InfInt s = process(input);
-	cout << "1 (Loop)" << endl << "Steps: " << s << endl;
+	pair<InfInt, InfInt> s = process(input);
+	cout << "1 (Loop)" << endl;
+	cout << "Steps: " << s.first << endl << "Max: " << s.second << endl;
 	return 0;
 }
