@@ -1,10 +1,11 @@
 #include <iostream>
+#include "InfInt.h"
 using namespace std;
 
-unsigned long long process(unsigned long long i, int steps = 0)
+InfInt process(InfInt i, InfInt steps = 0)
 {
-	unsigned long long n = i;
-	int s = steps;
+	InfInt n = i;
+	InfInt s = steps;
 	if (n == 1 || n == 0)
 		return s;
 	if (n % 2 == 0)
@@ -19,12 +20,12 @@ unsigned long long process(unsigned long long i, int steps = 0)
 
 int main()
 {
-	unsigned long long input;
+	InfInt input;
 
 	cout << "Collatz Conjecture Calculator" << endl;
 	cout << "Input an integer >";
 	cin >> input;
-	unsigned long long s = process(input);
+	InfInt s = process(input);
 	cout << "1 (Loop)" << endl << "Steps: " << s << endl;
 	return 0;
 }
