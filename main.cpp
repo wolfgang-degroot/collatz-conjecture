@@ -11,7 +11,7 @@ int process(int i, int steps = 0)
 		n = n/2;
 	else
 		n = n * 3 + 1;
-	cout << i << " -> ";
+	cout << i << " » ";
 	s++;
 	s = process(n, s);
 	return s;
