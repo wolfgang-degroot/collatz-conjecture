@@ -7,7 +7,9 @@ pair<InfInt, InfInt> process(InfInt i, InfInt steps = 0, InfInt max = 0)
 	InfInt n = i;
 	InfInt s = steps;
 	InfInt m = max;
-	if (n == 1 || n == 0)
+	if (n <= 0)
+		throw std::underflow_error("Input cannot be below one!");
+	if (n == 1)
 		return make_pair(s, m);
 	if (n % 2 == 0)
 		n = n/2;
@@ -32,6 +34,6 @@ int main()
 	cout << "1 (Loop)" << endl << endl;
 	cout << "Input: " << input    << endl;
 	cout << "Steps: " << s.first  << endl;
-	cout << "Max: "   << s.second << endl;
+	cout << "Max:   " << s.second << endl;
 	return 0;
 }
