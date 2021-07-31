@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
 
-int process(int i, int steps = 0)
+unsigned long long process(unsigned long long i, int steps = 0)
 {
-	int n = i;
+	unsigned long long n = i;
 	int s = steps;
 	if (n == 1)
 		return s;
@@ -19,12 +19,12 @@ int process(int i, int steps = 0)
 
 int main()
 {
-	int input;
+	unsigned long long input;
 
 	cout << "Collatz Conjecture Calculator" << endl;
 	cout << "Input an integer >";
 	cin >> input;
-	int s = process(input);
+	unsigned long long s = process(input);
 	cout << "1 (Loop)" << endl << "Steps: " << s << endl;
 	return 0;
 }
