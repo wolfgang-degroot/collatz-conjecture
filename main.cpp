@@ -29,7 +29,9 @@ int main()
 	cout << "Input an integer >";
 	cin >> input;
 	pair<InfInt, InfInt> s = process(input);
-	cout << "1 (Loop)" << endl;
-	cout << "Steps: " << s.first << endl << "Max: " << s.second << endl;
+	cout << "1 (Loop)" << endl << endl;
+	cout << "Input: " << input    << endl;
+	cout << "Steps: " << s.first  << endl;
+	cout << "Max: "   << s.second << endl;
 	return 0;
 }
